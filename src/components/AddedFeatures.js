@@ -10,7 +10,8 @@ const AddedFeatures = props => {
       {props.features.length ? (
         <ol type="1">
           {props.features.map(item => (
-            <AddedFeature key={item.id} feature={item} />
+            //Okay I'm passing down id as id, but I think that's wrong. 
+            <AddedFeature key={item.id} id={item.id} feature={item} />
           ))}
         </ol>
       ) : (
