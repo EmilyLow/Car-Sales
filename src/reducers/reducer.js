@@ -19,8 +19,12 @@ const initialState =  {
 export const reducer = (state = initialState, action) => {
 
     switch (action.type) {
-
-        default: 
+      case "ADD_FEATURE":
+        
+        return {...state, car: {...state.car, features: [...state.car.features, action.payload ]}
+        
+        }
+       default: 
         return state;
     }
 
