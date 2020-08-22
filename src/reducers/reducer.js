@@ -24,18 +24,25 @@ export const reducer = (state = initialState, action) => {
         return {...state, car: {...state.car, features: [...state.car.features, action.payload ]}
         
         }
+        //Cleaner way to do this?
       case "REMOVE_FEATURE":
         return {...state, car: {...state.car, features: state.car.features.filter( (feature) => {
             if (!(feature.id === action.payload.id)) {
               return feature;
             }
-         
         })
         
         }}
-        
-        
-        
+      case "UPDATE_PRICE":
+        let initialValue = 0;
+        const reducer = (accumulator, item) => {
+          return accumulator + item.price;
+        }
+        const updatedPrice = state.car.features.reduce(reducer, initialValue);
+       
+        // console.log("Updated price", updatedPrice);
+        return {...state, additionalPrice: updatedPrice};
+
        default: 
         return state;
     }

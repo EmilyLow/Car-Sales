@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { addFeature } from "../actions/actions";
+import { addFeature, updatePrice } from "../actions/actions";
 
 //Was this line here to begin with?
 import AddedFeatures from './AddedFeatures';
 
 const AdditionalFeature = props => {
+
+  const update = () => {
+    props.addFeature(props.feature);
+    props.updatePrice();
+  }
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
-      <button className="button"  onClick= {() => props.addFeature(props.feature)}>Add</button>
+      <button className="button"  onClick= {update}>Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );
@@ -23,6 +28,6 @@ const mapStateToProps = (state) => {
 };
 
 
-const mapDispatchToProps = { addFeature};
+const mapDispatchToProps = { addFeature, updatePrice};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdditionalFeature);

@@ -7,6 +7,9 @@ import Total from './components/Total';
 import {connect} from "react-redux"
 
 
+//My main question is if I'm handing the way AddedFeatures & AdditionalFeatures pass to AddedFeature & AdditionalFeature correctly
+
+
 const App = () => {
   const state = {
     additionalPrice: 0,
