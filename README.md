@@ -89,3 +89,13 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
 * [ ] Fill out your module retrospective form [here](https://forms.lambdaschool.com/module-retrospective) with a link to your PR
 
+Steps:
+1. Set up empty reducer and state
+2. Set up store and provider
+3. Connect components
+4. Replace current state with reducer state, in the order items visually appear on site
+(Check that nothing is broken)
+5. Add event to actually add "added" items
+6. Check that price updates correctly
+7. Add ability to remove features
+8. Check that price still updates

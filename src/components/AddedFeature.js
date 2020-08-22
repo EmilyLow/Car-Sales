@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const AddedFeature = props => {
   return (
@@ -10,4 +11,14 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+//How do you pull one specific feature here? Without mapping through it in the parent?
+const mapStateToProps = state => {
+  return {
+    features: state.car.features
+  }
+}
+
+export default connect(mapStateToProps, {})(AddedFeature);
+
+
+
